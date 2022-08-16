@@ -4,7 +4,9 @@ package message
 func NewResponse(request SipReq, via []SipVia, to SipTo, from SipFrom, callID SipVal, maxfor SipVal) *SipMsg {
 	r := new(SipMsg)
 	r.Req = request
-	r.Via = via
+	for _, viaiter := range via {
+		r.Via = append(r.Via, viaiter)
+	}
 	r.To = SipTo{
 		UriType:  from.UriType,
 		Name:     from.Name,
