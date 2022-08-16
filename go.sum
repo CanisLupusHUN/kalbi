@@ -1,5 +1,5 @@
-github.com/CanisLupusHUN/kalbi v0.1.2 h1:P0PR3RXPDfRUeCvcJRdBHlAi0tRAA3WPWiqmeT2ChvY=
-github.com/CanisLupusHUN/kalbi v0.1.2/go.mod h1:o48v4IUe19XfF853aATeLhVM6v3KhtA/lHqlAWbHvYI=
+github.com/KalbiProject/kalbi v0.1.1 h1:uEyOHUOlD+W9F2AKef7ZIRA39ol+IYakAgcjHWpl6vY=
+github.com/KalbiProject/kalbi v0.1.1/go.mod h1:UyqoN/9qXO39H7wDQpIuq3DtVwwa3Xd0vGAe/Y+8VHA=
 github.com/benbjohnson/clock v1.1.0 h1:Q92kusRqC1XV2MjkWETPvjJVqKetz1OzxZB7mHJLju8=
 github.com/benbjohnson/clock v1.1.0/go.mod h1:J11/hYXuz8f4ySSvYwY0FKfm+ezbsZBKZxNJlLklBHA=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
