@@ -3,7 +3,6 @@ module github.com/CanisLupusHUN/kalbi
 go 1.17
 
 require (
-	github.com/KalbiProject/kalbi v0.1.1
 	github.com/libp2p/go-reuseport v0.1.0
 	github.com/looplab/fsm v0.3.0
 	github.com/sirupsen/logrus v1.8.1

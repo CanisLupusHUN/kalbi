@@ -1,11 +1,4 @@
-# github.com/KalbiProject/kalbi v0.1.1
 ## explicit; go 1.17
-github.com/KalbiProject/kalbi/authentication
-github.com/KalbiProject/kalbi/interfaces
-github.com/KalbiProject/kalbi/log
-github.com/KalbiProject/kalbi/sdp
-github.com/KalbiProject/kalbi/sip/message
-github.com/KalbiProject/kalbi/utils
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
 github.com/davecgh/go-spew/spew
