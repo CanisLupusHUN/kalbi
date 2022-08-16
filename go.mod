@@ -1,4 +1,4 @@
-module github.com/KalbiProject/kalbi
+module github.com/CanisLupusHUN/kalbi
 
 go 1.17
 
