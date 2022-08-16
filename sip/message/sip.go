@@ -2,11 +2,11 @@ package message
 
 import (
 	"bytes"
-	"github.com/KalbiProject/kalbi/sip/method"
+	"github.com/CanisLupusHUN/kalbi/sip/method"
 	"strconv"
 	"strings"
 
-	"github.com/KalbiProject/kalbi/sdp"
+	"github.com/CanisLupusHUN/kalbi/sdp"
 )
 
 var keepSrc = true

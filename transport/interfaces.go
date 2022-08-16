@@ -1,11 +1,11 @@
 package transport
 
 import (
-	"github.com/KalbiProject/kalbi/interfaces"
-	"github.com/KalbiProject/kalbi/sip/message"
+	"github.com/CanisLupusHUN/kalbi/interfaces"
+	"github.com/CanisLupusHUN/kalbi/sip/message"
 )
 
-//ListeningPoint interface for listening point
+// ListeningPoint interface for listening point
 type ListeningPoint interface {
 	Read() interfaces.SipEventObject
 	Build(string, int)
@@ -14,7 +14,7 @@ type ListeningPoint interface {
 	Send(string, string, string) error
 }
 
-//Transaction interface for SIP transactions
+// Transaction interface for SIP transactions
 type Transaction interface {
 	GetBranchID() string
 	GetOrigin() *message.SipMsg

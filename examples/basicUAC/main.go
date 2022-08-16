@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"time"
 
-	kalbi "github.com/KalbiProject/kalbi"
-	"github.com/KalbiProject/kalbi/authentication"
-	"github.com/KalbiProject/kalbi/interfaces"
-	"github.com/KalbiProject/kalbi/sip/message"
-	"github.com/KalbiProject/kalbi/sip/method"
-	"github.com/KalbiProject/kalbi/sip/status"
+	kalbi "github.com/CanisLupusHUN/kalbi"
+	"github.com/CanisLupusHUN/kalbi/authentication"
+	"github.com/CanisLupusHUN/kalbi/interfaces"
+	"github.com/CanisLupusHUN/kalbi/sip/message"
+	"github.com/CanisLupusHUN/kalbi/sip/method"
+	"github.com/CanisLupusHUN/kalbi/sip/status"
 )
 
 const (

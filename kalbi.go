@@ -1,15 +1,15 @@
 package kalbi
 
 import (
-	"github.com/KalbiProject/kalbi/interfaces"
-	"github.com/KalbiProject/kalbi/log"
-	"github.com/KalbiProject/kalbi/sip/dialog"
-	"github.com/KalbiProject/kalbi/sip/message"
-	"github.com/KalbiProject/kalbi/sip/transaction"
-	"github.com/KalbiProject/kalbi/transport"
+	"github.com/CanisLupusHUN/kalbi/interfaces"
+	"github.com/CanisLupusHUN/kalbi/log"
+	"github.com/CanisLupusHUN/kalbi/sip/dialog"
+	"github.com/CanisLupusHUN/kalbi/sip/message"
+	"github.com/CanisLupusHUN/kalbi/sip/transaction"
+	"github.com/CanisLupusHUN/kalbi/transport"
 )
 
-//NewSipStack  creates new sip stack
+// NewSipStack  creates new sip stack
 func NewSipStack(Name string) *SipStack {
 	stack := new(SipStack)
 	stack.Name = Name
@@ -20,7 +20,7 @@ func NewSipStack(Name string) *SipStack {
 	return stack
 }
 
-//SipStack has multiple protocol listning points
+// SipStack has multiple protocol listning points
 type SipStack struct {
 	Name             string
 	ListeningPoints  []interfaces.ListeningPoint
@@ -34,12 +34,12 @@ type SipStack struct {
 	funcMap          map[string]func(interfaces.SipEventObject)
 }
 
-//GetTransactionManager returns TransactionManager
+// GetTransactionManager returns TransactionManager
 func (ed *SipStack) GetTransactionManager() *transaction.TransactionManager {
 	return ed.TransManager
 }
 
-//CreateListenPoint creates listening point to the event dispatcher
+// CreateListenPoint creates listening point to the event dispatcher
 func (ed *SipStack) CreateListenPoint(protocol string, host string, port int) interfaces.ListeningPoint {
 	listenpoint := transport.NewTransportListenPoint(protocol, host, port)
 	listenpoint.SetTransportChannel(ed.TransportChannel)
@@ -47,7 +47,7 @@ func (ed *SipStack) CreateListenPoint(protocol string, host string, port int) in
 	return listenpoint
 }
 
-//SetSipListener sets a struct that follows the SipListener interface
+// SetSipListener sets a struct that follows the SipListener interface
 func (ed *SipStack) SetSipListener(listener interfaces.SipListener) {
 	ed.sipListener = listener
 }
@@ -108,18 +108,18 @@ func (ed *SipStack) UPDATE(handler func(interfaces.SipEventObject)) {
 	ed.funcMap["UPDATE"] = handler
 }
 
-//IsAlive check if SipStack is alive
+// IsAlive check if SipStack is alive
 func (ed *SipStack) IsAlive() bool {
 	return ed.Alive
 }
 
-//Stop stops SipStack execution
+// Stop stops SipStack execution
 func (ed *SipStack) Stop() {
 	log.Log.Info("Stopping SIP Server...")
 	ed.Alive = false
 }
 
-//Start starts the sip stack
+// Start starts the sip stack
 func (ed *SipStack) Start() {
 	log.Log.Info("Starting SIP Server...")
 	ed.TransManager.ListeningPoint = ed.ListeningPoints[0]

@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/KalbiProject/kalbi/interfaces"
-	"github.com/KalbiProject/kalbi/log"
-	"github.com/KalbiProject/kalbi/sip"
-	"github.com/KalbiProject/kalbi/sip/event"
+	"github.com/CanisLupusHUN/kalbi/interfaces"
+	"github.com/CanisLupusHUN/kalbi/log"
+	"github.com/CanisLupusHUN/kalbi/sip"
+	"github.com/CanisLupusHUN/kalbi/sip/event"
 	reuse "github.com/libp2p/go-reuseport"
 )
 
-//UDPTransport is a network protocol listening point for the EventDispatcher
+// UDPTransport is a network protocol listening point for the EventDispatcher
 type UDPTransport struct {
 	Host             string
 	Port             int
@@ -20,7 +20,7 @@ type UDPTransport struct {
 	TransportChannel chan interfaces.SipEventObject
 }
 
-//Read from UDP Socket
+// Read from UDP Socket
 func (ut *UDPTransport) Read() interfaces.SipEventObject {
 	buffer := make([]byte, 2048)
 	n, _, err := ut.Connection.ReadFrom(buffer)
@@ -34,17 +34,17 @@ func (ut *UDPTransport) Read() interfaces.SipEventObject {
 	return event
 }
 
-//GetHost returns ip interface address
+// GetHost returns ip interface address
 func (ut *UDPTransport) GetHost() string {
 	return ut.Host
 }
 
-//GetPort returns ip interface port
+// GetPort returns ip interface port
 func (ut *UDPTransport) GetPort() int {
 	return ut.Port
 }
 
-//Build initializes the UDPTransport object
+// Build initializes the UDPTransport object
 func (ut *UDPTransport) Build(host string, port int) {
 	ut.Host = host
 	ut.Port = port
@@ -61,7 +61,7 @@ func (ut *UDPTransport) Build(host string, port int) {
 
 }
 
-//Start starts the ListeningPoint
+// Start starts the ListeningPoint
 func (ut *UDPTransport) Start() {
 	log.Log.Info("Starting UDP Listening Point ")
 	for {
@@ -70,12 +70,12 @@ func (ut *UDPTransport) Start() {
 	}
 }
 
-//SetTransportChannel setter that allows to set SipStack's Transport Channel
+// SetTransportChannel setter that allows to set SipStack's Transport Channel
 func (ut *UDPTransport) SetTransportChannel(channel chan interfaces.SipEventObject) {
 	ut.TransportChannel = channel
 }
 
-//Send allows you to send a SIP message
+// Send allows you to send a SIP message
 func (ut *UDPTransport) Send(host string, port string, msg string) error {
 	addr, err := net.ResolveUDPAddr("udp", host+":"+port)
 	if err != nil {

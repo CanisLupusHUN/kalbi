@@ -1,16 +1,16 @@
 package interfaces
 
 import (
-	"github.com/KalbiProject/kalbi/sip/message"
+	"github.com/CanisLupusHUN/kalbi/sip/message"
 )
 
-//SipListener interface for sip listener i.e. Your Application
+// SipListener interface for sip listener i.e. Your Application
 type SipListener interface {
 	HandleRequests(SipEventObject)
 	HandleResponses(SipEventObject)
 }
 
-//Transaction interface for SIP transactions
+// Transaction interface for SIP transactions
 type Transaction interface {
 	GetBranchID() string
 	GetOrigin() *message.SipMsg
@@ -23,7 +23,7 @@ type Transaction interface {
 	GetListeningPoint() ListeningPoint
 }
 
-//SipEventObject interface for SIP events
+// SipEventObject interface for SIP events
 type SipEventObject interface {
 	GetSipMessage() *message.SipMsg
 	SetSipMessage(*message.SipMsg)
@@ -33,7 +33,7 @@ type SipEventObject interface {
 	GetListeningPoint() ListeningPoint
 }
 
-//ListeningPoint interface for listening point
+// ListeningPoint interface for listening point
 type ListeningPoint interface {
 	Read() SipEventObject
 	Build(string, int)

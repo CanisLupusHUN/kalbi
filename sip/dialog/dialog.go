@@ -3,8 +3,8 @@ package dialog
 import (
 	"sync"
 
-	"github.com/KalbiProject/kalbi/interfaces"
-	"github.com/KalbiProject/kalbi/log"
+	"github.com/CanisLupusHUN/kalbi/interfaces"
+	"github.com/CanisLupusHUN/kalbi/log"
 )
 
 /*
@@ -74,7 +74,7 @@ RFC3261 - https://tools.ietf.org/html/rfc3261#section-12
 
 */
 
-//NewDialogManager returns new Dialog Manager
+// NewDialogManager returns new Dialog Manager
 func NewDialogManager() *DialogManager {
 	diagMng := new(DialogManager)
 
@@ -83,13 +83,13 @@ func NewDialogManager() *DialogManager {
 	return diagMng
 }
 
-//DialogManager hold multiple dialogs
+// DialogManager hold multiple dialogs
 type DialogManager struct {
 	dialogs map[string]Dialog
 	Lock    *sync.RWMutex
 }
 
-//GetDialog returns dialog by ID
+// GetDialog returns dialog by ID
 func (dm *DialogManager) GetDialog(value string) *Dialog {
 	dm.Lock.RLock()
 	diag, exists := dm.dialogs[value]
@@ -101,14 +101,14 @@ func (dm *DialogManager) GetDialog(value string) *Dialog {
 	return nil
 }
 
-//DeleteDialog removes dialog from Dialog Manager by ID
+// DeleteDialog removes dialog from Dialog Manager by ID
 func (dm *DialogManager) DeleteDialog(value string) {
 	log.Log.Info("Deleting Dialog ")
 	delete(dm.dialogs, value)
 
 }
 
-//NewDialog creates a new Dialog
+// NewDialog creates a new Dialog
 func (dm *DialogManager) NewDialog() *Dialog {
 	diag := new(Dialog)
 	diag.DialogID = GenerateDialogID()
@@ -116,7 +116,7 @@ func (dm *DialogManager) NewDialog() *Dialog {
 	return diag
 }
 
-//Dialog used to store track multiple transactions
+// Dialog used to store track multiple transactions
 type Dialog struct {
 	DialogID int32
 	CallID   string

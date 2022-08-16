@@ -1,6 +1,6 @@
 package message
 
-import "github.com/KalbiProject/kalbi/utils"
+import "github.com/CanisLupusHUN/kalbi/utils"
 
 /*
 20.7 Authorization

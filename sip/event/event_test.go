@@ -5,9 +5,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/KalbiProject/kalbi/interfaces"
-	"github.com/KalbiProject/kalbi/sdp"
-	"github.com/KalbiProject/kalbi/sip/message"
+	"github.com/CanisLupusHUN/kalbi/interfaces"
+	"github.com/CanisLupusHUN/kalbi/sdp"
+	"github.com/CanisLupusHUN/kalbi/sip/message"
 )
 
 var (

@@ -3,8 +3,8 @@ package transport
 import (
 	"strconv"
 
-	"github.com/KalbiProject/kalbi/interfaces"
-	"github.com/KalbiProject/kalbi/log"
+	"github.com/CanisLupusHUN/kalbi/interfaces"
+	"github.com/CanisLupusHUN/kalbi/log"
 )
 
 // NewTransportListenPoint creates listen
