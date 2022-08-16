@@ -2,6 +2,7 @@ package message
 
 import (
 	"bytes"
+	"github.com/KalbiProject/kalbi/sip/method"
 	"strconv"
 	"strings"
 
@@ -10,7 +11,7 @@ import (
 
 var keepSrc = true
 
-//SipMsg is a representation of a SIP message
+// SipMsg is a representation of a SIP message
 type SipMsg struct {
 	Req      SipReq
 	From     SipFrom
@@ -30,12 +31,12 @@ type SipMsg struct {
 	Sdp      sdp.SdpMsg
 }
 
-//SetAuthHeader sets auth header
+// SetAuthHeader sets auth header
 func (sm *SipMsg) SetAuthHeader(auth *SipAuth) {
 	sm.Auth = *auth
 }
 
-//GetStatusCode returns responses status code
+// GetStatusCode returns responses status code
 func (sm *SipMsg) GetStatusCode() int {
 	code, err := strconv.Atoi(string(sm.Req.StatusCode))
 	if err != nil {
@@ -44,7 +45,7 @@ func (sm *SipMsg) GetStatusCode() int {
 	return code
 }
 
-//CopyHeaders copys headers from one SIP message to another
+// CopyHeaders copys headers from one SIP message to another
 func (sm *SipMsg) CopyHeaders(msg *SipMsg) {
 	sm.Via = msg.Via
 	sm.From = msg.From
@@ -57,12 +58,12 @@ func (sm *SipMsg) CopyHeaders(msg *SipMsg) {
 	sm.ContLen = msg.ContLen
 }
 
-//CopySdp copys SDP from one SIP message to another
+// CopySdp copys SDP from one SIP message to another
 func (sm *SipMsg) CopySdp(msg *SipMsg) {
 	sm.Sdp = msg.Sdp
 }
 
-//Export returns SIP message as string
+// Export returns SIP message as string
 func (sm *SipMsg) String() string {
 	sipmsg := ""
 	sipmsg += sm.Req.String() + "\r\n"
@@ -74,8 +75,10 @@ func (sm *SipMsg) String() string {
 	if sm.ContType.Value != nil {
 		sipmsg += "Content-Type: " + sm.ContType.String() + "\r\n"
 	}
-	if sm.Auth.Response != nil {
+	if sm.Auth.Response != nil && string(sm.Req.Method) == method.REGISTER {
 		sipmsg += "Authorization: " + sm.Auth.String() + "\r\n"
+	} else if sm.Auth.Response != nil && string(sm.Req.Method) == method.INVITE {
+		sipmsg += "Proxy-Authorization: " + sm.Auth.String() + "\r\n"
 	} else if sm.Auth.Nonce != nil {
 		sipmsg += "WWW-Authenticate: " + sm.Auth.String() + "\r\n"
 	}
@@ -91,18 +94,18 @@ func (sm *SipMsg) String() string {
 	return sipmsg
 }
 
-//SipVal is the value of a simple SIP Header e.g. Max Forwards
+// SipVal is the value of a simple SIP Header e.g. Max Forwards
 type SipVal struct {
 	Value []byte // Sip Value
 	Src   []byte // Full source if needed
 }
 
-//SetValue sets the value of a simple SIP Header e.g. Max Forwards
+// SetValue sets the value of a simple SIP Header e.g. Max Forwards
 func (sv *SipVal) SetValue(value string) {
 	sv.Value = []byte(value)
 }
 
-//Export returns SIP value as string
+// Export returns SIP value as string
 func (sv *SipVal) String() string {
 	return string(sv.Value)
 }
