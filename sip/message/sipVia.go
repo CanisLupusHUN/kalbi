@@ -36,6 +36,7 @@ func (sv *SipVia) String() string {
 
 	s += string(sv.Host)
 	if sv.Port != nil {
+		s += ":"
 		s += string(sv.Port)
 	}
 	if sv.Rport != nil {
