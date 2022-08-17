@@ -111,16 +111,16 @@ func ParseSipVia(v []byte, out *SipVia) {
 						continue
 					}
 				}
-				// Look for a Branch identifier
-				if getString(v, pos, pos+7) == "branch=" {
-					state = fieldBranch
-					pos = pos + 7
-					continue
-				}
 				// Look for a Rport identifier
 				if getString(v, pos, pos+6) == "rport=" {
 					state = fieldRport
 					pos = pos + 6
+					continue
+				}
+				// Look for a Branch identifier
+				if getString(v, pos, pos+7) == "branch=" {
+					state = fieldBranch
+					pos = pos + 7
 					continue
 				}
 				// Look for a maddr identifier
