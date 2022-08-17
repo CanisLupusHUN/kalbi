@@ -3,6 +3,7 @@ package message
 import (
 	"fmt"
 	"math/rand"
+	"time"
 
 	"github.com/CanisLupusHUN/kalbi/log"
 )
@@ -10,6 +11,7 @@ import (
 // GenerateBranchID generates a new branch ID
 func GenerateBranchID() string {
 	b := make([]byte, 8)
+	rand.Seed(time.Now().UnixNano())
 	_, err := rand.Read(b)
 	if err != nil {
 		log.Log.Fatal(err)
