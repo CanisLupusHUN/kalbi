@@ -30,11 +30,31 @@ type SipVia struct {
 
 // String returns Header as String
 func (sv *SipVia) String() string {
-	if sv.Port == nil {
-		return "Via: SIP/2.0/" + strings.ToUpper(sv.Trans) + " " + string(sv.Host) + ";branch=" + string(sv.Branch)
-	} else {
-		return "Via: SIP/2.0/" + strings.ToUpper(sv.Trans) + " " + string(sv.Host) + ":" + string(sv.Port) + ";branch=" + string(sv.Branch)
+	s := "Via: SIP/2.0/"
+	s += strings.ToUpper(sv.Trans)
+	s += " "
+
+	s += string(sv.Host)
+	if sv.Port != nil {
+		s += string(sv.Port)
 	}
+	if sv.Rport != nil {
+		s += ";rport="
+		s += string(sv.Rport)
+	}
+	if sv.Branch != nil {
+		s += ";branch="
+		s += string(sv.Branch)
+	}
+	if sv.Maddr != nil {
+		s += ";maddr="
+		s += string(sv.Maddr)
+	}
+	if sv.Ttl != nil {
+		s += ";ttl="
+		s += string(sv.Ttl)
+	}
+	return s
 }
 
 // SetTransport sets transport in via header
