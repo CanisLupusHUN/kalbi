@@ -7,7 +7,7 @@ func NewResponse(request SipReq, via []SipVia, to SipTo, from SipFrom, callID Si
 	for i, _ := range via {
 		r.Via = append(r.Via, via[i])
 	}
-	r.To = SipTo{
+	r.To = to /*SipTo{
 		UriType:  from.UriType,
 		Name:     from.Name,
 		User:     from.User,
@@ -16,8 +16,8 @@ func NewResponse(request SipReq, via []SipVia, to SipTo, from SipFrom, callID Si
 		Tag:      from.Tag,
 		UserType: from.UserType,
 		Src:      from.Src,
-	}
-	r.From = SipFrom{
+	}*/
+	r.From = from /*SipFrom{
 		UriType:  to.UriType,
 		Name:     to.Name,
 		User:     to.User,
@@ -26,7 +26,7 @@ func NewResponse(request SipReq, via []SipVia, to SipTo, from SipFrom, callID Si
 		Tag:      to.Tag,
 		UserType: to.UserType,
 		Src:      to.Src,
-	}
+	}*/
 	r.CallID = callID
 	r.MaxFwd = maxfor
 	return r
