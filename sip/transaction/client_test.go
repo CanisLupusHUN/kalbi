@@ -18,7 +18,7 @@ func TestClientTransaction_InitFSM(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -48,7 +48,7 @@ func TestClientTransaction_InitFSM(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -72,7 +72,7 @@ func TestClientTransaction_SetListeningPoint(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -102,7 +102,7 @@ func TestClientTransaction_SetListeningPoint(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -126,7 +126,7 @@ func TestClientTransaction_GetListeningPoint(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -153,7 +153,7 @@ func TestClientTransaction_GetListeningPoint(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -179,7 +179,7 @@ func TestClientTransaction_GetBranchID(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -206,7 +206,7 @@ func TestClientTransaction_GetBranchID(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -232,7 +232,7 @@ func TestClientTransaction_GetOrigin(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -259,7 +259,7 @@ func TestClientTransaction_GetOrigin(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -285,7 +285,7 @@ func TestClientTransaction_Receive(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -315,7 +315,7 @@ func TestClientTransaction_Receive(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -339,7 +339,7 @@ func TestClientTransaction_act100(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -369,7 +369,7 @@ func TestClientTransaction_act100(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -393,7 +393,7 @@ func TestClientTransaction_SetServerTransaction(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -423,7 +423,7 @@ func TestClientTransaction_SetServerTransaction(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -447,7 +447,7 @@ func TestClientTransaction_GetServerTransactionID(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -474,7 +474,7 @@ func TestClientTransaction_GetServerTransactionID(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -500,7 +500,7 @@ func TestClientTransaction_GetLastMessage(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -527,7 +527,7 @@ func TestClientTransaction_GetLastMessage(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -553,7 +553,7 @@ func TestClientTransaction_SetLastMessage(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -583,7 +583,7 @@ func TestClientTransaction_SetLastMessage(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -607,7 +607,7 @@ func TestClientTransaction_actSend(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -637,7 +637,7 @@ func TestClientTransaction_actSend(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -661,7 +661,7 @@ func TestClientTransaction_act300(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -691,7 +691,7 @@ func TestClientTransaction_act300(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -715,7 +715,7 @@ func TestClientTransaction_actTransErr(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -745,7 +745,7 @@ func TestClientTransaction_actTransErr(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -769,7 +769,7 @@ func TestClientTransaction_actDelete(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -799,7 +799,7 @@ func TestClientTransaction_actDelete(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -823,7 +823,7 @@ func TestClientTransaction_actResend(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -853,7 +853,7 @@ func TestClientTransaction_actResend(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -877,7 +877,7 @@ func TestClientTransaction_Resend(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -903,7 +903,7 @@ func TestClientTransaction_Resend(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -927,7 +927,7 @@ func TestClientTransaction_StatelessSend(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -959,7 +959,7 @@ func TestClientTransaction_StatelessSend(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,
@@ -983,7 +983,7 @@ func TestClientTransaction_Send(t *testing.T) {
 		TransManager   *TransactionManager
 		Origin         *message.SipMsg
 		FSM            *fsm.FSM
-		msgHistory     []*message.SipMsg
+		MsgHistory     []*message.SipMsg
 		ListeningPoint interfaces.ListeningPoint
 		Host           string
 		Port           string
@@ -1015,7 +1015,7 @@ func TestClientTransaction_Send(t *testing.T) {
 				TransManager:   tt.fields.TransManager,
 				Origin:         tt.fields.Origin,
 				FSM:            tt.fields.FSM,
-				msgHistory:     tt.fields.msgHistory,
+				MsgHistory:     tt.fields.MsgHistory,
 				ListeningPoint: tt.fields.ListeningPoint,
 				Host:           tt.fields.Host,
 				Port:           tt.fields.Port,

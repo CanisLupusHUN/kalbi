@@ -67,7 +67,7 @@ type ClientTransaction struct {
 	TransManager   *TransactionManager
 	Origin         *message.SipMsg
 	FSM            *fsm.FSM
-	msgHistory     []*message.SipMsg
+	MsgHistory     []*message.SipMsg
 	ListeningPoint interfaces.ListeningPoint
 	Host           string
 	Port           string
