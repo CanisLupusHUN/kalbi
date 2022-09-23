@@ -15,7 +15,7 @@ usage of the procedures in [4]).
 
 */
 
-//SipVia SIP Via Header
+// SipVia SIP Via Header
 type SipVia struct {
 	Trans  string // Type of Transport udp, tcp, tls, sctp etc
 	Host   []byte // Host part
@@ -28,32 +28,57 @@ type SipVia struct {
 	Src    []byte // Full source if needed
 }
 
-//String returns Header as String
+// String returns Header as String
 func (sv *SipVia) String() string {
-	return "Via: SIP/2.0/" + strings.ToUpper(sv.Trans) + " " + string(sv.Host) + ":" + string(sv.Port) + ";branch=" + string(sv.Branch)
+	s := "Via: SIP/2.0/"
+	s += strings.ToUpper(sv.Trans)
+	s += " "
+
+	s += string(sv.Host)
+	if sv.Port != nil {
+		s += ":"
+		s += string(sv.Port)
+	}
+	if sv.Rport != nil {
+		s += ";rport="
+		s += string(sv.Rport)
+	}
+	if sv.Branch != nil {
+		s += ";branch="
+		s += string(sv.Branch)
+	}
+	if sv.Maddr != nil {
+		s += ";maddr="
+		s += string(sv.Maddr)
+	}
+	if sv.Ttl != nil {
+		s += ";ttl="
+		s += string(sv.Ttl)
+	}
+	return s
 }
 
-//SetTransport sets transport in via header
+// SetTransport sets transport in via header
 func (sv *SipVia) SetTransport(trans string) {
 	sv.Trans = strings.ToUpper(trans)
 }
 
-//SetHost set host portion of uri
+// SetHost set host portion of uri
 func (sv *SipVia) SetHost(value string) {
 	sv.Host = []byte(value)
 }
 
-//SetPort sets port portion of uri
+// SetPort sets port portion of uri
 func (sv *SipVia) SetPort(value string) {
 	sv.Port = []byte(value)
 }
 
-//SetBranch sets branch
+// SetBranch sets branch
 func (sv *SipVia) SetBranch(value string) {
 	sv.Branch = []byte(value)
 }
 
-//ParseSipVia parses SIP Via Header
+// ParseSipVia parses SIP Via Header
 func ParseSipVia(v []byte, out *SipVia) {
 
 	pos := 0
@@ -107,16 +132,16 @@ func ParseSipVia(v []byte, out *SipVia) {
 						continue
 					}
 				}
-				// Look for a Branch identifier
-				if getString(v, pos, pos+7) == "branch=" {
-					state = fieldBranch
-					pos = pos + 7
-					continue
-				}
 				// Look for a Rport identifier
 				if getString(v, pos, pos+6) == "rport=" {
 					state = fieldRport
 					pos = pos + 6
+					continue
+				}
+				// Look for a Branch identifier
+				if getString(v, pos, pos+7) == "branch=" {
+					state = fieldBranch
+					pos = pos + 7
 					continue
 				}
 				// Look for a maddr identifier
