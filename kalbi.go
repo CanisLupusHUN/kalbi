@@ -135,7 +135,7 @@ func (ed *SipStack) Start() {
 		if message.Req.StatusCode != nil {
 			go ed.sipListener.HandleResponses(event)
 		} else if message.Req.Method != nil {
-			/*switch string(message.Req.Method) {
+			switch string(message.Req.Method) {
 			case "INVITE":
 				ed.funcMap["INVITE"](event)
 			case "ACK":
@@ -146,7 +146,7 @@ func (ed *SipStack) Start() {
 				ed.funcMap["CANCEL"](event)
 			case "REGISTER":
 				ed.funcMap["REGISTER"](event)
-			}*/
+			}
 		}
 		//TODO: Handle failed SIP parse send 400 Bad Request
 
