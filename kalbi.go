@@ -131,11 +131,11 @@ func (ed *SipStack) Start() {
 	for ed.Alive {
 		msg := <-ed.TransportChannel
 		event := ed.TransManager.Handle(msg)
-		message := event.GetSipMessage()
-		if message.Req.StatusCode != nil {
+		messageRecived := event.GetSipMessage()
+		if messageRecived.Req.StatusCode != nil {
 			go ed.sipListener.HandleResponses(event)
-		} else if message.Req.Method != nil {
-			switch string(message.Req.Method) {
+		} else if messageRecived.Req.Method != nil {
+			switch string(messageRecived.Req.Method) {
 			case "INVITE":
 				ed.funcMap["INVITE"](event)
 			case "ACK":
