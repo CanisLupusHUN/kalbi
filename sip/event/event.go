@@ -1,10 +1,7 @@
 package event
 
 import (
-	"fmt"
-
 	"github.com/CanisLupusHUN/kalbi/interfaces"
-	logger "github.com/CanisLupusHUN/kalbi/logger"
 	"github.com/CanisLupusHUN/kalbi/sip/message"
 )
 
@@ -23,7 +20,7 @@ func (se *SipEvent) GetSipMessage() *message.SipMsg {
 // SetSipMessage sets message that created this event
 func (se *SipEvent) SetSipMessage(msg *message.SipMsg) {
 	se.sipmsg = msg
-	logger.Debug(fmt.Sprintln(msg.String()))
+	//logger.Debug(fmt.Sprintln(msg.String()))
 }
 
 // GetTransaction returns transaction related to the SIP message that created this event
